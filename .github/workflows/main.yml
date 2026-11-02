@@ -51,7 +51,7 @@ jobs:
           }
           CLIENTS="$(mk "$PKG" 0123456789abcdef),$(mk "$PKG.debug" 0123456789abcde0)"
           [ -n "$SUF" ] && CLIENTS="$CLIENTS,$(mk "$PKG$SUF" 0123456789abcde1)"
-          echo "{\"project_info\":{\"project_number\":\"123456789012\",\"project_id\":\"dummy-project\",\"storage_bucket\":\"dummy-project.appspot.com\"},\"client\":[$CLIENTS],\"configuration_version\":\"1\"}" > "$F"
+          echo "{\"project_info\":{\"project_number\":\"123456789012\",\"project_id\":\"dummy-project\",\"firebase_url\":\"https://dummy-project-default-rtdb.firebaseio.com\",\"storage_bucket\":\"dummy-project.appspot.com\"},\"client\":[$CLIENTS],\"configuration_version\":\"1\"}" > "$F"
           cat "$F"
 
       - name: Setup Gradle (cache)
